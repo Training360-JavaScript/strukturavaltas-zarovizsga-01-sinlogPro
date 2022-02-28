@@ -1,1 +1,35 @@
 <p>app works!</p>
+
+<!-- {{ allConstruction$ | async | json }} -->
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Material</th>
+          <th>Trade</th>
+          <th>Cost_code</th>
+          <th>Price</th>
+          <th>Active</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of allConstruction$ | async">
+          <td>{{ row.id }}</td>
+          <td>{{ row.material }}</td>
+          <td>{{ row.trade }}</td>
+          <td>{{ row.cost_code }}</td>
+          <td>{{ row.price }}</td>
+          <td>{{ row.active }}</td>
+          <td>
+            <button (click)="onDelete(row)"
+            class="btn btn-danger"><i class="fa fa-trash "></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
