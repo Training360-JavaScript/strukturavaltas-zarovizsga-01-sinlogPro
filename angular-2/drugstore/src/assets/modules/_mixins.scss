@@ -6,3 +6,13 @@
     @content
   }
 };
+
+@mixin change-bg-color($bg-color) {
+  @media (max-width: 599px) {
+    @content;
+
+  }
+  &:hover {
+    background-color: $bg-color;
+  }
+};
